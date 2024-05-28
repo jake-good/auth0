@@ -26,7 +26,7 @@ builder.Services
         options.AddPolicy(
             "read:messages",
             policy => policy.Requirements.Add(
-                new HasScopeRequirement("read:messages", "https://dev-e7fegfphkjmlye5q.us.auth0.com/")
+                new HasScopeRequirement("read:messages", $"https://{builder.Configuration["Auth0:Domain"]}/")
             )
         );
     });
